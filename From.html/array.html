@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let num = [3, 4, 7, 2, 8]
+
+        // let num2 =   num.map((a,b,arr)=>{
+        //    return a+b 
+        // })
+        // document.write(num2)
+
+        // let num3 = num.filter((v) => {
+        //     return v >= 4
+        // })
+        // document.write(num3)
+
+
+        //  spread in array
+        // let name = ["Sourav", "Vishal", "Shoib", "Tanuj", "Akash", "Varun"]
+
+        // function getNames(num, num1, num2, num3, num4, num5) {
+        //     console.log(num, num1, num2)
+        // }
+
+        // getNames(...name)
+
+        // //  spread in object
+
+        // let student = {
+        //     ...name,
+
+        // }
+
+        // function getAbout(name, age, Stats) {
+        //     console.log(name, age, Stats)
+        // }
+
+        // getAbout(...student)
+
+        // const users = [
+        //     { name: "Sourav", age: 23, stats: "Depressed" },
+        //     { name: "Pallvi", age: 24, stats: "Happy" },
+        //     { name: "Rajiv", age: 26, stats: "littele-Happy" },
+        //     { name: "Ritik", age: 27, stats: "Exteremly_happy" },
+        // ]
+
+        // const output = users.reduce((acc, curr) => {
+        //     if (curr.age < 25 && !acc) {
+        //         return curr.name;
+        //     }
+        //     return acc;
+        // }, null)
+
+        // console.log(output)
+
+        // const users = [
+        //     { name: "Sourav", age: 23, stats: "Depressed" },
+        //     { name: "Pallvi", age: 24, stats: "Happy" },
+        //     { name: "Rajiv", age: 26, stats: "littele-Happy" },
+        //     { name: "Ritik", age: 27, stats: "Exteremly_happy" },
+        // ];
+
+        // const result = users.reduce((acc, user) => {
+        //     if (user.age < 25 && !acc) {
+        //         return user.name;
+        //     }
+        //     return acc;
+        // }, null);
+
+        // console.log(result);
+
+        // function hello(x, y) {
+        //     s = x + y
+        //     return s;
+        // }
+
+        // let val = hello(3, 4)
+        // console.log(val)
+
+        let count = 0;
+
+        const countVovel = (str) => {
+
+            for (const char of str) {
+                if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u") {
+                    count++;
+                }
+            }
+            console.log(count)
+        }
+
+        countVovel("apnacollege");
+
+    </script>
+</body>
+
+</html>

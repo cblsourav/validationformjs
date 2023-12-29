@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: pink;">
+    <div>
+        <ul id="top">
+            fruit
+            <li>
+                <div id="apple">apple </div>
+            </li>
+            <li>
+                <div id="Mango">Mango </div>
+            </li>
+            <li>
+                <div id="peach">peach </div>
+            </li>
+            <li>
+                <div id="orange"> orange </div>
+            </li>
+            <li><a id="google" target="_blank"
+                    href="https://www.google.com/search?gs_ssp=eJzj4tTP1TcwMU02T1JgNGB0YPBiS8_PT89JBQBASQXT&q=google&rlz=1C5CHFA_enIN1059IN1059&oq=goo&gs_lcrp=EgZjaHJvbWUqGAgCEC4YQxiDARjHARixAxjRAxiABBiKBTIGCAAQRRg5MhIIARAAGEMYgwEYsQMYgAQYigUyGAgCEC4YQxiDARjHARixAxjRAxiABBiKBTISCAMQABhDGIMBGLEDGIAEGIoFMhIIBBAAGEMYgwEYsQMYgAQYigUyDAgFEAAYQxiABBiKBTIMCAYQABhDGIAEGIoFMhIIBxAAGEMYgwEYsQMYgAQYigUyDAgIEAAYQxiABBiKBTIHCAkQABiPAtIBCTU1MzZqMGoxNagCALACAA&sourceid=chrome&ie=UTF-8">google</a>
+            </li>
+        </ul>
+
+
+        
+ <!-- removeEventListener -->
+        <!-- <p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Eos, labore perspiciatis fugiat consequatur officia voluptatem illo,
+            pariatur repellat ratione nostrum sapiente dicta! Vitae quaerat deleniti
+            laboriosam autem, magni non atque.˙</p>
+        <button onclick="removeEvent()">remove</button>
+        <div id="memo"></div>
+    </div> -->
+
+
+
+<!-- timestam -->
+        <!-- <button id="timestampButton">Click me to get timestamp</button> -->
+
+        <script>
+            document.getElementById('top').addEventListener('click', function (e) {
+                console.log('clicked on the top ');
+                
+            })
+            document.getElementById('apple').addEventListener('click', function (e) {
+                e.stopPropagation()
+                console.log('clicked on the apple');
+            })
+
+            document.getElementById('google').addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                console.log('google clicked');
+            })
+
+            document.querySelector('#top').addEventListener('click', function (e) {
+                console.log(e.target.parentNode);
+               
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+                console.log(removeIt.remove())
+            })
+
+            
+
+            // document.getElementById('demo').addEventListener('timest', myfun)
+
+            // function removeEvent() {
+            //     document.getElementById('demo').removeEventListener('mousemove', myfun)
+            // }
+
+            // function myfun() {
+            //     document.getElementById('memo').innerHTML = Math.random()
+            // }
+
+            // document.getElementById('timestampButton').addEventListener('click', function () {
+            //     var timestam = new Date()
+
+            //     alert("here is your timing" + timestam)
+            // })
+
+
+
+
+
+
+
+
+
+
+        // document.getElementById('orange').addEventListener('click', clickHandler('orange'))
+        // document.getElementById('green').addEventListener('click', clickHandler('green'))
+        </script>
+</body>
+
+</html>

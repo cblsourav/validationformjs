@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let obj = {
+        //     name: "sourav",
+        //     class: "BCA",
+        //     Id: 2,
+        //     address: [{
+        //         city: "Mohali",
+        //         state: "Punjab"
+        //     },
+        //     {
+        //         city: "Hamirpur",
+        //         state: "Himachal"
+        //     },
+        //     {
+        //         city: "pinjore",
+        //         state: "Haryana"
+        //     },]
+        // }
+        // obj.address.forEach(function (addressObj) {
+        //     document.write("City:", addressObj.city + '<br>');
+        //     document.write("State:", addressObj.state + '<br>');
+        // });
+
+        // let mySymbol = Symbol('myKey1')
+
+        // let student = {
+        //     name: 'sourav',
+        //     age: 25,
+        //     class: 'BCA',
+        //     [mySymbol]: "Badluck"
+        // }
+
+        // console.log(student[mySymbol]);
+        // console.log(student['age']);
+
+        // // Object.freeze(student)
+
+        // student.class = 'ThirdClass'
+
+        // console.log(student['class']);
+
+        // student.greeting = function () {
+        //     console.log("taare gardish mey hai ")
+        // }
+        // console.log(student.greeting());
+
+        // student.greetingTwo = function () {
+        //     console.log(`hello ek din ${this.name} tumhari`);
+        // }
+        // console.log(student.greetingTwo());
+
+
+        // const obj = { 1: 'A', 2: "B", 3: 'C' }
+        // const obj2 = { 4: 'd', 5: "e", 6: 'f' }
+
+        // const obj3 = { obj, obj2 }
+        // // console.log(obj3);
+
+
+        // const obj4 = { ...obj, ...obj2 }
+        // // console.log(obj4);
+
+        // // console.log(Object.keys(obj));
+        // // console.log(Object.values(obj));
+        // // destructurin in object
+        // const user = {
+        //     name: 'Sorav',
+        //     course: 'Bcom'
+        // }
+
+        // const { course, name } = user
+
+        // console.log(course);
+        // console.log(name);
+
+        // // overriding or shadowing
+
+        // const obj9 = {
+        //     name: 'sourav',
+        //     happy: 'Not',
+        // }
+
+        // const customobj = Object.create(obj9)
+
+        // // ocveriding and shaodowing     
+
+        // console.log(customobj.happy);
+
+        // customobj.happy = 'Nothappy'
+
+        // console.log(customobj.happy);
+
+
+        // let obj = {
+        //     productName: "T-Shirt",
+        //     price: 1050,
+        //     discount: '50%',
+        //     itemCode: 'tsihrt102'
+        // }
+
+        function mobile(modelNo, price) {
+            return {
+                model: modelNo,
+                price: price
+            }
+        }
+
+        let lg = mobile('redmi',1000)
+        document.write(lg.model + '<br>' + lg.price + '<br>')
+
+
+        let samsung = mobile('sumsung',  2000)
+        document.write(samsung.model + '<br>' + samsung.price)
+
+
+    </script>
+</body>
+
+</html>

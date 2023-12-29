@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body 
+        {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+
+        #bground 
+        {
+            height: 800px;
+            width: 100%;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #fmContainer 
+        {
+            background-color: rgb(220, 234, 239);
+            height: 600px;
+            width: 550px;
+            margin: 20px;
+            border-radius: 20px;
+            padding: 20px;
+            position: absolute;
+        }
+
+        .inputBox 
+        {
+            padding: 10px;
+        }
+
+        .submitButton 
+        {
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+        .txt 
+        {
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bground">
+        <div id="fmContainer">
+            <form action="#" id="myForm">
+                <div class="inputBox">
+                    <label class="txt" for="userName">Name:</label><br>
+                    <input type="text" id="userName" name="userName"
+                        style="font-size: 15px; height: 20px; width: 200px;" placeholder="Enter your Name">
+                </div>
+                <span style="color: red;" id="nameError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userContact">Mobile number:</label><br>
+                    <input type="text" id="userContact" name="userContact" style="font-size: 15px; width: 200px;"
+                        placeholder="Mobile number">
+                </div>
+                <span style="color: red;" id="contactError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userAddress">Enter Address:</label><br>
+                    <input type="text" id="userAddress" name="userAddress" style="font-size: 15px; width: 200px;"
+                        placeholder="Enter your Address">
+                </div>
+                <span style="color: red;" id="addressError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userForm">Password:</label><br>
+                    <input type="password" id="Password" name="Password" style="font-size: 20px; width: 200px;"
+                        placeholder="">
+                </div>
+                <span style="color: red;" id="passwordError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userTo">Confirm Password:</label><br>
+                    <input type="password" id="ConfirmPassword" name="ConfirmPassword"
+                        style="width: 200px; font-size: 20px;" placeholder="">
+                </div>
+                <span style="color: red;" id="confirmError"></span>
+                <br>
+                <div class="inputBox">
+                    <label class="txt">Select your gender:</label>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </div><br>
+                <span style="color: red;" id="genderError"></span>
+                <div class="inputBox">
+                    <label class="txt">Hobbies:</label><br>
+                    <input type="checkbox" id="cricket" name="hobbies[]" class="checkbox" value="cricket">
+                    <label for="cricket">Cricket:</label>
+                    <input type="checkbox" id="singing" name="hobbies[]" class="checkbox" value="singing">
+                    <label for="singing">Singing:</label>
+                    <input type="checkbox" id="chess" name="hobbies[]" class="checkbox" value="chess">
+                    <label for="chess">Chess:</label>
+                    <input type="checkbox" id="other" name="hobbies[]" class="checkbox" value="other">
+                    <label for="other">Other:</label>
+                </div><br>
+                <span style="color: red;" id="hobbiesError"></span>
+                <div class="submitButton">
+                    <button type="button" id="submitButton" onclick="validateForm()">Submit</button>
+                    <button id="reset" onclick="form[0].reset()">reset</button>
+                </div>
+            </form>
+
+            <div style="margin: 20px;">
+                <center>
+
+<!--  // -------------- IT WILL SHOW ONLY IF LOCAL STROAGE VARIABLE EXIST ----------------// -->
+                    
+<table id="studentTable" border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Hobbies</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table rows will be dynamically added here -->
+    </tbody>
+</table>
+
+                    <div style="margin-top: 20;">
+                        <button onclick="eraseAll()" id="btn2">erase</button>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+    <script>
+        // -------------- ERASE ALL LOCAL STORAGE VARIBALE ----------------//
+        // function eraseAll() 
+        // {
+        //     localStorage.clear();
+        //     location.reload()
+        // }
+
+        let student = [];   // <---------- CREATE STUDENT ARRAY TO STORE MULTIPLE ARRAYS --------<<
+
+          // -------------- FORM VALIDATION CODE ----------------//
+
+        function validateForm() 
+        {
+            let validation = true;
+
+              // -------------- GET ALL FROM VARIABLES  ----------------//
+
+            let userName = document.getElementById('userName').value;
+            let userContact = document.getElementById('userContact').value;
+            let userAddress = document.getElementById('userAddress').value;
+            let userPassword = document.getElementById('Password').value;
+            let confirmPassword = document.getElementById('ConfirmPassword').value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let hobbies = document.querySelectorAll('input[name="hobbies[]"]:checked');
+
+              // -------------- GET ALL SELECTED HOBBIES VALUES ----------------//
+
+            let checkedValues = Array.from(hobbies).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+              // -------------- ERASE ALL PREVIIOS ERROR MSG  ----------------//
+
+            document.getElementById('nameError').innerHTML = '';
+            document.getElementById('contactError').innerHTML = '';
+            document.getElementById('addressError').innerHTML = '';
+            document.getElementById('passwordError').innerHTML = '';
+            document.getElementById('confirmError').innerHTML = '';
+            document.getElementById('genderError').innerHTML = '';
+            document.getElementById('hobbiesError').innerHTML = '';
+
+              // -------------- CONDITIONS ----------------//
+
+            if (!userName) 
+            {
+                document.getElementById('nameError').innerHTML = 'Please fill the Name';
+                validation = false;
+            } else 
+            {
+                let alphaPattern = /^[a-zA-Z]+$/;
+                let checkName = alphaPattern.test(userName);
+                if (!checkName) 
+                {
+                    document.getElementById('nameError').innerHTML = 'Please fill the Name in Alphabets ';
+                    validation = false;
+                }
+            }
+            if (!userAddress) 
+            {
+                document.getElementById('addressError').innerHTML = 'Please fill the Address';
+                validation = false;
+            }
+            if (!userPassword) 
+            {
+                document.getElementById('passwordError').innerHTML = 'Please fill the Password';
+                validation = false;
+            }
+            if (!userContact) 
+            {
+                document.getElementById('contactError').innerHTML = 'Please fill the Contact';
+                validation = false;
+            } else 
+            {
+                let numberPattern = /^[0-9]+$/;
+                let checkContact = numberPattern.test(userContact);
+                if (!checkContact) 
+                {
+                    document.getElementById('contactError').innerHTML = 'Only Digits are allowed ';
+                    validation = false;
+                } else if (userContact.length !== 10) 
+                {
+                    document.getElementById('contactError').innerHTML = 'Please enter a 10-digit number.';
+                    validation = false;
+                }
+            }
+            if (!confirmPassword) 
+            {
+                document.getElementById('confirmError').innerHTML = 'Please fill the Confirm Password';
+                validation = false;
+            } else if (userPassword !== confirmPassword) 
+
+            {
+                alert('Passwords do not match');
+                validation = false;
+            }
+            if (!gender) 
+            {
+                document.getElementById('genderError').innerHTML = 'Select the gender';
+                validation = false;
+            }
+            if (!checkedValues.length) 
+            {
+                document.getElementById('hobbiesError').innerHTML = 'Select at least one hobby';
+                validation = false;
+            }
+
+
+              // -------------- IF ALL INPUT FIELD ARE VALID THEN IT WILL RUN ----------------//
+
+            if (validation === true) 
+            {
+                alert('Form submitted successfully!');
+
+                location.reload()
+                let data = [];                         // <---------- ARRAY DATA CREATE FOR STORING INDIVIDUAL RECORD --------<<
+                data[0] = userName;
+                data[1] = userContact;
+                data[2] = userAddress;
+                data[3] = gender ? gender.value : '';
+                data[4] = checkedValues;
+
+                student.push(data.slice());  // <---------- IT WILL ADD DATA IN TO STUDENT ARRAY AND EXTRACT VALUE FROPM IT  --------<<
+                data = [];
+
+                localStorage.setItem('student', JSON.stringify(student));
+
+                getStudentData();
+            } 
+            else 
+            {
+                return false;
+            }
+        }
+
+        reset = () => 
+        {
+            document.getElementById('myForm').reset();
+        };
+
+        function getStudentData() 
+        {
+            if (storedStudent) 
+            {
+                student = JSON.parse(storedStudent);
+            }
+        }
+
+     
+
+
+//         THIS FUNCTION UPDATE THE TABLE
+        function updateTable() 
+        {
+            let storedStudent = localStorage.getItem('student');
+            if (storedStudent) 
+            {
+                // JSON TO OBJECT
+                student = JSON.parse(storedStudent);
+
+                let table = document.getElementById('studentTable');
+                let tbody = table.querySelector('tbody');
+                tbody.innerHTML = '';
+
+                for (let i = 0; i < student.length; i++) 
+                {
+                    let data = student[i];
+                    let dataRow = tbody.insertRow();
+
+                    for (let j = 0; j < data.length; j++) 
+                    {
+                        let cell = dataRow.insertCell();
+                        cell.textContent = data[j];
+                    }
+
+                    // Add checkbox cell
+                    let checkboxCell = dataRow.insertCell();
+                    let checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkboxCell.appendChild(checkbox);
+                }
+            }
+        }
+
+        function eraseAll() 
+        {
+                let table = document.getElementById('studentTable');
+                let checkboxes = table.querySelectorAll('tbody input[type="checkbox"]:checked');
+
+                if (checkboxes.length === 0) 
+                {
+                    alert('Select at least one row to delete.');
+                    return;
+                }
+
+                let indicesToDelete = Array.from(checkboxes).map(checkbox => checkbox.parentNode.parentNode.rowIndex - 1);
+
+                //<<------  Remove the selected records from the array
+                indicesToDelete.sort((a, b) => b - a); // Sort in reverse order to avoid index issues
+                indicesToDelete.forEach(index => student.splice(index, 1));
+
+                // Update localStorage
+                localStorage.setItem('student', JSON.stringify(student));
+
+                //<<--------------- Update the table --------------------<<
+                updateTable();
+        }
+            updateTable();
+    </script>
+</body>
+
+</html>

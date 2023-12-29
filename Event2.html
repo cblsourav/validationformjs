@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .dark {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body ononline="online()" onoffline="offline()" onload="load()">
+    <div>
+        <center>
+            <h1>JavaScript Events<i class="material-icons" style="font-size:36px" onclick="bg()">brightness_medium</i>
+            </h1>
+        </center>
+    </div>
+    <form onsubmit="submit()" action="#">
+        <table border="1">
+            <tr>
+                <td>1.Single Click:</td>
+                <td><i class="material-icons" id="chan" style="font-size:36px;color:red"
+                        onclick="show()">sentiment_very_dissatisfied</i></td>
+            </tr>
+
+            <tr>
+                <td>2.Duble Click:</td>
+                <td><i class="fa fa-heart" style="font-size:36px;color:grey" ondblclick="show1()" id="heart"></i></td>
+            </tr>
+            <tr>
+                <td>3.Wifi Status:</td>
+                <td><i class="material-icons" id="status" style="font-size:36px;color:grey">signal_wifi_4_bar</i></td>
+            </tr>
+            <tr>
+                <td>4.onmouseover:</td>
+                <td><i class="material-icons" style="font-size:36px;color:grey" onmouseover="mouse()" id="ms">cloud</i>
+                </td>
+            </tr>
+            <tr>
+                <td>5.onmouseout:</td>
+                <td id="hello" onmouseout="out()">Hello!</td>
+            </tr>
+            <tr>
+                <td>6.focus</td>
+                <td><input type="text" onfocus="foc(this)" /></td>
+            </tr>
+            <tr>
+                <td>7.onkeydown:</td>
+                <td><input type="text" onkeydown="keydown()" id="down" /></td>
+            </tr>
+            <tr>
+                <td>8.onkeyup:</td>
+                <td><input type="text" onkeyup="keyup()" id="key" /></td>
+            </tr>
+            <tr>
+                <td>9.onload:</td>
+                <td><input type="text" /></td>
+            </tr>
+
+            <tr>
+                <td>10.onsubmit:</td>
+                <td>
+                    <input type="text" id="n1" placeholder="n1" />
+                    <input type="text" id="n2" placeholder="n1" />
+                    <p id="res"></p>
+                    <input type="submit" value="submit" />
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+    <script>
+        function load() {
+            alert("Please wait while it load!!")
+        }
+        function show() {
+            document.getElementById('chan').innerHTML = "sentiment_very_satisfied";
+        }
+
+        function show1() {
+            document.getElementById('heart').style.color = "red";
+
+        }
+        function up() {
+            document.getElementById('thumb').style.color = "#3262a8"
+        }
+
+        function online() {
+            document.getElementById('status').innerHTML = "signal_wifi_4_bar";
+        }
+
+        function offline() {
+            document.getElementById('status').innerHTML = "signal_wifi_off";
+        }
+        function bg() {
+            // document.body.style.backgroundColor = "black";
+            //
+            // document.body.style.color = "white";
+
+            document.body.classList.toggle('dark')
+        }
+
+        function mouse() {
+            document.getElementById('ms').innerHTML = "cloud_done";
+        }
+        function out() {
+            document.getElementById('hello').style.backgroundColor = "Green";
+            document.getElementById('hello').style.color = "white";
+        }
+        function foc(x) {
+            x.style.background = "#607696";
+        }
+
+        function keydown() {
+            alert('Key is press');
+        }
+        function keyup() {
+            let a = document.getElementById('key').value;
+            alert(a);
+        }
+        function submit() {
+            let a = document.getElementById('n1');
+            let b = document.getElementById('n2');
+            let c = a + b;
+            document.getElementById('res').innerHTML = "Sum is:" + c;
+        }
+    </script>
+</body>
+
+</html>
+<style>
+    table {
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>

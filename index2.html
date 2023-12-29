@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+<title>this is Dom</title>
+<style>
+
+</style>
+
+<body>
+    <div class="helo">
+        <text id="box">free service</text>
+    </div>
+
+    <div class="helo">
+        <text id="box4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas!</text> <br>
+        <text id="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas!</text> <br>
+        <text id="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas!</text> <br>
+        <text id="box3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas!</text> <br>
+    </div>
+
+    <div>
+
+        <h4 class="heading-class">hello this JavaScript</h4>
+        <p class="heading-class">Lorem ipsum dolor sit amet consectetur adipisicing elit.assumenda fuga quo modi.</p>
+        <button>click me</button>
+    </div>
+
+
+    <h2>Hello JavaScript</h2>
+    <div class="box">First div</div>
+    <div class="box">Second div</div>
+    <div class="box">third div</div>
+
+
+    <script>
+        let divs = document.querySelectorAll(".box")
+
+        for (v of divs) {
+            console.dir(v.innerText)
+        }
+
+        // doubt in console length is zero why?
+        let element = document.getElementsByClassName('heading-class')
+
+        console.log(element[0].innerText)
+        console.dir(element)
+
+
+
+
+
+
+        // let element1 = document.getElementById('heading')
+
+        // console.dir(element1)
+
+        // doubt in console length is zero why?
+        // let element2 = document.getElementsByTagName("p")
+
+        // document.write(element2)
+
+        // query
+        let element2 = document.querySelectorAll('h2')
+
+        console.log(element2.innerText)
+
+        // element2.innerText = element2.innerText + "from Apna College"
+
+
+        // // confirm alert
+        // confirm('hello')
+
+        // // alert        
+        // alert('Wrong Information')
+
+        // // warning        
+        // console.warn("warning");
+
+        // // error
+        // console.error("error"); '<br>'
+
+        // // prompt
+
+        // var age = prompt("Enter Your Age"); 
+        // '<br>'
+        // document.write(age)
+
+
+
+
+
+
+        document.body.childNodes[5].innerHTML = 'green'
+    </script>
+</body>
+
+
+</html>
+
+<style>
+    #spac {
+        padding-left: 20px;
+    }
+</style>
