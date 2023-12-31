@@ -1,0 +1,46 @@
+body 
+        {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+
+#bground 
+        {
+            height: 800px;
+            width: 100%;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+#fmContainer 
+        {
+            background-color: rgb(220, 234, 239);
+            height: 600px;
+            width: 550px;
+            margin: 20px;
+            border-radius: 20px;
+            padding: 20px;
+            position: absolute;
+        }
+
+.inputBox 
+        {
+            padding: 10px;
+        }
+
+.submitButton 
+        {
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+.txt 
+        {
+            font-weight: 800;
+        }
