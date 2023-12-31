@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- <link rel="stylesheet" href="From.css"> -->
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="bground">
+        <div id="fmContainer">
+            <form action="#" id="myForm">
+                <div class="inputBox">
+                    <label class="txt" for="userName">Name:</label><br>
+                    <input type="text" id="userName" name="userName"
+                        style="font-size: 15px; height: 20px; width: 200px;" placeholder="Enter your Name">
+                </div>
+                <span style="color: red;" id="nameError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userContact">Mobile number:</label><br>
+                    <input type="text" id="userContact" name="userContact" style="font-size: 15px; width: 200px;"
+                        placeholder="Mobile number">
+                </div>
+                <span style="color: red;" id="contactError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userAddress">Enter Email Address:</label><br>
+                    <input type="text" id="userAddress" name="userAddress" style="font-size: 15px; width: 200px;"
+                        placeholder="Enter your Address">
+                </div>
+                <span style="color: red;" id="addressError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userForm">Password:</label><br>
+                    <input type="password" id="Password" name="Password" style="font-size: 20px; width: 200px;"
+                        placeholder="">
+                </div>
+                <span style="color: red;" id="passwordError"></span>
+                <div class="inputBox">
+                    <label class="txt" for="userTo">Confirm Password:</label><br>
+                    <input type="password" id="ConfirmPassword" name="ConfirmPassword"
+                        style="width: 200px; font-size: 20px;" placeholder="">
+                </div>
+                <span style="color: red;" id="confirmError"></span>
+                <br>
+                <div class="inputBox">
+                    <label class="txt">Select your gender:</label>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </div><br>
+                <span style="color: red;" id="genderError"></span>
+                <div class="inputBox">
+                    <label class="txt">Hobbies:</label><br>
+                    <input type="checkbox" id="cricket" name="hobbies[]" class="checkbox" value="cricket">
+                    <label for="cricket">Cricket:</label>
+                    <input type="checkbox" id="singing" name="hobbies[]" class="checkbox" value="singing">
+                    <label for="singing">Singing:</label>
+                    <input type="checkbox" id="chess" name="hobbies[]" class="checkbox" value="chess">
+                    <label for="chess">Chess:</label>
+                    <input type="checkbox" id="other" name="hobbies[]" class="checkbox" value="other">
+                    <label for="other">Other:</label>
+                </div><br>
+                <span style="color: red;" id="hobbiesError"></span>
+                <div class="submitButton">
+                    <button type="button" id="submitButton" onclick="validateForm()">Submit</button>
+                    <!-- <button id="reset" onclick="form[0].reset()">reset</button> -->
+                </div>
+            </form>
+
+            <div style="margin: 20px;">
+                <center>
+<!--  // -------------- IT WILL SHOW ONLY IF LOCAL STROAGE VARIABLE EXIST ----------------// -->
+                            <table id="studentTable" border="1">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Contact</th>
+                                        <th>Email Address</th>
+                                        <th>Gender</th>
+                                        <th>Hobbies</th>
+                                        <th>Delete</th>
+                                        <th>Checkbox</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Table rows will be dynamically added here -->
+                                </tbody>
+                            </table>
+
+                            <div style="margin-top: 20;">
+                                <button onclick="eraseAll()" id="btn2">erase</button>
+                            </div>
+
+                </center>
+            </div>
+
+        </div>
+    </div>
+    <script src="From.js" ></script>
+</body>
+
+</html>
