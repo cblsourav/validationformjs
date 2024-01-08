@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: grey;">
+    <div>
+        <form action="#" id="myform">
+            <div class="inputBox" style="margin: 5px;">
+                <label class="txt" for="userName">Name</label> <br>
+                <input type="text" id="userName" name="userName" style="font-size: 15px; height: 20px; width: 200px;"
+                    placeholder="Enter your Name">
+            </div>
+            <span id="nameError" style="color: red;" ></span>
+            <div class="inputBox" style="margin: 5px;">
+                <label class="txt" for="userContact">Contact</label> <br>
+                <input type="text" id="userContact" name="userContact"
+                    style="font-size: 15px; height: 20px; width: 200px;" placeholder="Enter your Mobile Number">
+            </div>
+            
+            <span id="contactError" style="color: red;"></span>
+
+            <div class="inputBox" style="margin: 5px;">
+                <label for="emailAddress">Enter your Email Address</label> <br>
+                <input type="text" name="emailAddress" id="emailAddress" placeholder="Enter your Email"
+                    style="font-size: 15px; height: 20px; width: 200px;">
+            </div>
+
+            <span id="emailError"></span>
+
+            <div class="inputBox" style="margin: 5px;">
+                <label for="password">Enter Your Password</label> <br>
+                <input type="password" id="password" name="password" placeholder=""
+                    style="font-size: 15px; height: 20px; width: 200px;">
+            </div>
+
+            <span id="passwordError" style="color: red;"></span>
+
+            <div class="confirmPassword" style="margin: 5px;">
+                <label for="confirmPassword">Confirm Password</label> <br>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder=""
+                    style="font-size: 15px; height: 20px; width: 200px;">
+            </div>
+
+            <span id="confirmError" style="color: red;"></span>
+
+            <div class="inputBox" style="margin: 5px;">
+                <label for="dateofBirth"> Date of Birth</label> <br>
+                <input type="date" id="dateofBirth" name="dateofBirth" placeholder=""
+                    style="font-size: 15px; height: 20px; width: 200px;">
+                </div>
+
+            <span id="dobError" style="color: red;"></span>
+
+            <div class="inputBox" style="margin: 5px;">
+                <label style="margin: 5px;" for="qualification">Qualification</label> <br>
+                <select name="qualification" id="qualification">
+                    <option value="selectone">Select the your Qualification</option>
+                    <option value="BCA">BCA</option>
+                    <option value="Btech">B.Tech</option>
+                    <option value="MCA">MCA</option>
+                </select>
+
+            <span id="qualificationError" style="color: red;"></span>
+
+                <div class="inputBox">
+                    <label for="starting">Starting Year</label> <br>
+                    <input type="date" id="starting" name="starting" placeholder="">
+                </div>
+
+                <span id="startError" style="color: red;"  ></span>
+
+                <div class="inputBox">
+                    <label for="passing">Passing Year</label> <br>
+                    <input type="date" id="passing" name="passing" placeholder="">
+                </div>
+                <span id="passingError" style="color: red;" ></span>
+                <div class="inputBox">
+                    <label class="txt">Select your gender:</label>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </div><br>
+                <span style="color: red;" id="genderError"></span>
+                <div class="inputBox">
+                    <label class="txt">Hobbies:</label><br>
+                    <input type="checkbox" id="cricket" name="hobbies[]" class="checkbox" value="cricket">
+                    <label for="cricket">Cricket:</label>
+                    <input type="checkbox" id="singing" name="hobbies[]" class="checkbox" value="singing">
+                    <label for="singing">Singing:</label>
+                    <input type="checkbox" id="chess" name="hobbies[]" class="checkbox" value="chess">
+                    <label for="chess">Chess:</label>
+                    <input type="checkbox" id="other" name="hobbies[]" class="checkbox" value="other">
+                    <label for="other">Other:</label>
+                </div><br>
+                <span style="color: red;" id="hobbiesError"></span>
+                <div class="submitButton">
+                    <button type="button" id="submitButton" onclick="validateForm()">Submit</button>
+                    <button type="reset" id="resetBtn">Reset</button>
+                </div>
+        </form>
+    </div>
+</body>
+<script>
+    let userName = document.querySelector('#userName').value;
+    let userContact = document.querySelector('#userContact').value;
+    let userEmail = document.querySelector('#emailAddress').value; 
+    let userPassword = document.querySelector('#password').value; 
+    let userConfirmPassword = document.querySelector('#confirmPassword').value; 
+    let DOB = document.querySelector('#dateofBirth').value; 
+    let qualification = document.querySelector('#qualification').value;
+    let starting = document.querySelector('#starting').value;
+    let passing = document.querySelector('#passing').value;
+    let gender = document.querySelector( `input[name="gender"]:checked`);
+    let hobbies = document.querySelectorAll(`input[name="hobbies[]"]:checked`);
+
+    const validateForm = () => 
+    {
+        if (userName === "") 
+        {
+            alert('Please Enter your Name');
+        }
+        else if (!userContact) 
+        {
+            alert('Please Enter your Contact');
+        }
+        else if (!userEmail) {
+            alert('Please Enter your Email Address');
+        }
+        else if (!userPassword) {
+            alert('Please Enter the password');
+        }
+        else if (!userConfirmPassword) {
+            alert('Please confirm your Password')
+        }
+        else if (!DOB) {
+            alert('Please confirm your Password')
+        }
+        else if (!qualification) {
+            alert('Please confirm your Password')
+        }
+        else if (!starting) {
+            alert('Please confirm your Password')
+        }
+        else if (!passing) {
+            alert('Please confirm your Password')
+        }
+        else if (!hobbies) {
+            alert('Please confirm your Password')
+        }
+    }
+</script>
+
+</html>

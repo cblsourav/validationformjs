@@ -5,16 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
-    <link rel="stylesheet" href="From.css">
-    <style>
-        
-    </style>
+    <!-- <link rel="stylesheet" href="From.css"> -->
+
 </head>
+<style>
+    body {
+        background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+    }
+
+    #bground {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputBox {
+        padding: 10px;
+    }
+
+    .submitButton {
+        margin-top: 10px;
+        border-radius: 20px;
+    }
+
+    .txt {
+        font-weight: 800;
+    }
+
+    .btn-login {
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        cursor: pointer;
+        margin: 10px 10px;
+    }
+
+    #spn {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin: 4px;
+        height: 30px;
+        width: 30px;
+        color: black;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+    .fmContainer {
+        background-color: rgb(220, 234, 239);
+        height: 600px;
+        width: 550px;
+        margin: 20px;
+        border-radius: 20px;
+        padding: 20px;
+        position: absolute;
+        top: -100%;
+        transition: 5s;
+    }
+
+    .showLoginFrom {
+        top: 5%;
+    }
+
+    .th {
+        color: orangered;
+    }
+</style>
 
 <body>
+    <button class="btn-login" onclick="showModal()">Login</button>
     <div id="bground">
-        <div id="fmContainer">
+        <div class="fmContainer">
             <form action="#" id="myForm">
+                <span onclick="closeModal()" id="spn">&times;</span>
                 <div class="inputBox">
                     <label class="txt" for="userName">Name:</label><br>
                     <input type="text" id="userName" name="userName"
@@ -67,40 +142,53 @@
                 <span style="color: red;" id="hobbiesError"></span>
                 <div class="submitButton">
                     <button type="button" id="submitButton" onclick="validateForm()">Submit</button>
+                    <button type="reset" id="resetBtn">Reset</button>
+
                     <!-- <button id="reset" onclick="form[0].reset()">reset</button> -->
                 </div>
             </form>
 
             <div style="margin: 20px;">
                 <center>
-<!--  // -------------- IT WILL SHOW ONLY IF LOCAL STROAGE VARIABLE EXIST ----------------// -->
-                            <table id="studentTable" border="1">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Contact</th>
-                                        <th>Email Address</th>
-                                        <th>Gender</th>
-                                        <th>Hobbies</th>
-                                        <th>Delete</th>
-                                        <th>Checkbox</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Table rows will be dynamically added here -->
-                                </tbody>
-                            </table>
-
-                            <div style="margin-top: 20;">
-                                <button onclick="eraseAll()" id="btn2">erase</button>
-                            </div>
-
+                    <!-- // -------------- IT WILL SHOW ONLY IF LOCAL STROAGE VARIABLE EXIST ----------------// -->
+                    <table id="studentTable" border="1">
+                        <thead>
+                            <tr>
+                                <th class="th">Name</th>
+                                <th class="th">Contact</th>
+                                <th class="th">Email Address</th>
+                                <th class="th">Gender</th>
+                                <th class="th">Hobbies</th>
+                                <th class="th">Delete</th>
+                                <th class="th">checkbox</th>
+                                <th class="th">edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 20px;">
+                        <button onclick="eraseAll()" id="btn2">checkbox</button>
+                        <button onclick="deleteAll()" id="all">DeleteAll</button>
+                    </div>
                 </center>
             </div>
-
         </div>
     </div>
-    <script src="From.js" ></script>
+
+    <script src="From.js"></script>
+    <script>
+        const showModal = () => {
+            document.querySelector('.fmContainer').classList.add('showLoginFrom');
+        }
+
+        const closeModal = () => {
+            document.querySelector('.fmContainer').classList.remove('showLoginFrom');
+        }
+
+    </script>
 </body>
+
 
 </html>

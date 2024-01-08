@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualification Selection</title>
+</head>
+<body>
+
+    <label for="qualification">Select Your Qualification:</label>
+    <select id="qualification" onchange="updateDates()">
+        <option value="0">Select Your Qualification</option>
+        <option value="BCA">BCA</option>
+        <option value="Btech">B.tech</option>
+        <option value="MCA">MCA</option>
+    </select>
+
+    <label for="startingYear">Starting Year:</label>
+    <input type="number" id="startingYear" min="1900" max="2100" step="1" placeholder="Enter starting year">
+
+    <label for="passingDate">Passing Date:</label>
+    <input type="date" id="passingDate" onchange="calculateFinalYearDate()" disabled>
+
+    <label for="finalYearDate">Final Year Date:</label>
+    <input type="date" id="finalYearDate" disabled>
+
+    <script>
+        function updateDates() {
+            var qualificationSelect = document.getElementById('qualification');
+            var startingYearInput = document.getElementById('startingYear');
+            var passingDateInput = document.getElementById('passingDate');
+            var finalYearDateInput = document.getElementById('finalYearDate');
+
+            // Reset date inputs
+            passingDateInput.value = '';
+            finalYearDateInput.value = '';
+
+            // Enable or disable date inputs based on the selected qualification
+            if (qualificationSelect.value !== '0') {
+                startingYearInput.removeAttribute('disabled');
+                passingDateInput.removeAttribute('disabled');
+                finalYearDateInput.removeAttribute('disabled');
+            } else {
+                startingYearInput.setAttribute('disabled', 'disabled');
+                passingDateInput.setAttribute('disabled', 'disabled');
+                finalYearDateInput.setAttribute('disabled', 'disabled');
+            }
+        }
+
+        function calculateFinalYearDate() {
+            var passingDateInput = document.getElementById('passingDate');
+            var finalYearDateInput = document.getElementById('finalYearDate');
+
+            // Get the passing date value
+            var passingDate = new Date(passingDateInput.value);
+
+            // Calculate final year by adding 3 years to the passing date
+            var finalYear = passingDate.getFullYear() + 3;
+
+            // Set the final year date
+            finalYearDateInput.value = finalYear + '-12-31';
+        }
+    </script>
+
+</body>
+</html>

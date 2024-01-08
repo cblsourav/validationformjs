@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .btn-login {
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .overLay {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            height: 100vh;
+            position: fixed;
+            top: 0%;
+            z-index: -1;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .loginform {
+            width: 360px;
+            background-color: white;
+            margin: 10px;
+            padding: 25px;
+            position: absolute;
+            left: 50%;
+            top: -50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 10px 3px #ccc;
+            transition: 2s;
+            z-index: 9;
+        }
+
+        .loginform input {
+            width: 100%;
+            margin: 10px;
+        }
+
+        .loginform button {
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin: 10px 10px;
+        }
+
+        .loginform span {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            margin: 4px;
+            background-color: green;
+            height: 30px;
+            width: 30px;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .showOverlay {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .showLoginFrom {
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-login">Login</button>
+    <div class="overLay" onclick="closeModal()"></div>
+
+    <div class="loginform">
+        <span>&times;</span>
+        <div class="">
+            <label for="userName">UserName</label>
+            <input type="text" placeholder="">
+        </div>
+        <div class="">
+            <label for="Password">Password</label>
+            <input type="text" placeholder="">
+        </div>
+        <button>Login</button>
+    </div>
+</body>
+<script>
+    const showModal = () => {
+        document.querySelector('.overLay').classList.add('showOverlay')
+        document.querySelector('.loginform').classList.add('showLoginFrom')
+    }
+    const closeModal = () => {
+        document.querySelector('.overLay').classList.remove('showOverlay')
+        document.querySelector('.loginform').classList.remove('showLoginFrom')
+    }
+    document.querySelector('.btn-login').addEventListener('click', showModal)
+    document.querySelector('.loginform span').addEventListener('click', closeModal)
+</script>
+
+</html>
