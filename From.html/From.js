@@ -309,4 +309,27 @@ function eraseAll() {
     //<<--------------- Update the table --------------------<<
     updateTable();
 }
+
+function searchByName() {
+    let searchValue = document.getElementById('searchName').value.trim().toLowerCase();
+    let table = document.getElementById('studentTable');
+    let rows = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+        let nameCell = rows[i].getElementsByTagName('td')[0];  //
+        if (nameCell) {
+            let nameText = nameCell.textContent || nameCell.innerText;
+            let matchIndex = nameText.toLowerCase().indexOf(searchValue);
+
+            if (matchIndex !== -1) {
+                rows[i].style.backgroundColor = 'yellow';
+            } else {
+                rows[i].style.backgroundColor = '';
+            }
+        }
+    }
+}
+
+document.getElementById('searchName').addEventListener('input', searchByName);
+
 updateTable()

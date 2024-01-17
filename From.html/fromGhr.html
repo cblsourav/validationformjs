@@ -10,11 +10,12 @@
 <body style="background-color: grey;">
     <div>
         <form action="#" id="myform">
-            <div class="inputBox" style="margin: 5px;">
-                <label class="txt" for="userName">Name</label> <br>
-                <input type="text" id="userName" name="userName" style="font-size: 15px; height: 20px; width: 200px;"
-                    placeholder="Enter your Name">
+            <div class="inputBox">
+                <label class="txt" for="userName">Name:</label><br>
+                <input type="text" id="userName" name="userName"
+                    style="font-size: 15px; height: 20px; width: 200px;" placeholder="Enter your Name">
             </div>
+            <span id="nameError"></span>
             <span id="nameError" style="color: red;" ></span>
             <div class="inputBox" style="margin: 5px;">
                 <label class="txt" for="userContact">Contact</label> <br>
@@ -106,11 +107,11 @@
     </div>
 </body>
 <script>
-    let userName = document.querySelector('#userName').value;
-    let userContact = document.querySelector('#userContact').value;
-    let userEmail = document.querySelector('#emailAddress').value; 
-    let userPassword = document.querySelector('#password').value; 
-    let userConfirmPassword = document.querySelector('#confirmPassword').value; 
+    let userName = document.getElementById('userName').value;
+    let userContact = document.getElementById('userContact').value.trim();
+    let userEmail = document.getElementById('emailAddress').value.trim(); 
+    let userPassword = document.getElementById('password').value.trim(); 
+    let userConfirmPassword = document.getElementById('confirmPassword').value.trim(); 
     let DOB = document.querySelector('#dateofBirth').value; 
     let qualification = document.querySelector('#qualification').value;
     let starting = document.querySelector('#starting').value;
@@ -118,41 +119,49 @@
     let gender = document.querySelector( `input[name="gender"]:checked`);
     let hobbies = document.querySelectorAll(`input[name="hobbies[]"]:checked`);
 
+
+    // Error Dispaly
+
+    nameError = document.getElementById("nameError").innerHTML = "" 
+
     const validateForm = () => 
     {
-        if (userName === "") 
+        if (!userName) 
         {
-            alert('Please Enter your Name');
+               document.getElementById('nameError').innerHTML = "PLez enter your name"
         }
-        else if (!userContact) 
-        {
-            alert('Please Enter your Contact');
-        }
-        else if (!userEmail) {
-            alert('Please Enter your Email Address');
-        }
-        else if (!userPassword) {
-            alert('Please Enter the password');
-        }
-        else if (!userConfirmPassword) {
-            alert('Please confirm your Password')
-        }
-        else if (!DOB) {
-            alert('Please confirm your Password')
-        }
-        else if (!qualification) {
-            alert('Please confirm your Password')
-        }
-        else if (!starting) {
-            alert('Please confirm your Password')
-        }
-        else if (!passing) {
-            alert('Please confirm your Password')
-        }
-        else if (!hobbies) {
-            alert('Please confirm your Password')
-        }
+        
     }
 </script>
+
+<!-- else if (!userContact) 
+{
+    alert('Please Enter your Contact');
+}
+else if (!userEmail) {
+    alert('Please Enter your Email Address');
+}
+else if (!userPassword) {
+    alert('Please Enter the password');
+}
+else if (!userConfirmPassword) {
+    alert('Please confirm your Password')
+}
+else if (!DOB) {
+    alert('Please confirm your Password')
+}
+else if (!qualification) {
+    alert('Please confirm your Password')
+}
+else if (!starting) {
+    alert('Please confirm your Password')
+}
+else if (!passing) {
+    alert('Please confirm your Password')
+}
+else if (!hobbies) {
+    alert('Please confirm your Password')
+} -->
+
 
 </html>
