@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class cls {
+
+            diff() {
+                console.log("hello Parent");
+            }
+            // constructor(name, age, salary) {
+            //     this.studentname = name;
+            //     this.studentage = age;
+            //     this.studentsalary = salary;
+            // }
+            // info() {
+            //     document.write(`name: ${this.studentname} <br/> salary 
+            //     ${this.studentsalary} <br/> age ${this.studentage}`)
+            // }
+        }
+
+        class cls2 extends cls {
+            // info() {
+            //     let ta = 2000;
+            //     let pa = 330;
+            //     let totalsalary = this.studentsalary + ta + pa
+
+            //     document.write(`name: ${this.studentname} <br/> salary 
+            //     ${totalsalary} <br/> age ${this.studentage}  <br/> <br/>  `)
+            // }
+
+
+            diff() {
+                super.diff();
+                console.log('hello Child');
+            }
+        }
+
+        let a = new cls2("sourav", 25, 20000);
+        let b = new cls()
+
+        b.diff()
+
+        //  a.diff() 
+
+        // let a = new cls2("sourav", 25, 20000);
+
+        // a.studentage = 129
+
+
+        // let b = new cls("Ram", 15, 1000);
+
+        // a.info()
+        // b.info()
+
+
+        // let arr = 'sourav kumar' 
+
+        // document.write(arr.split('  '));
+
+
+        // const sentence = "Hello world, how are you?";
+        // const words = sentence.split(","); // Splitting by space
+        // console.log(words);
+
+
+        // const names = "John,Doe,Jane,Smith";
+        // const nameArray = names.split(","); // Splitting by comma
+        // console.log(nameArray);
+
+        // let arr = ['s', 'h', 'i', 'v', 'a']
+        // console.log(arr);
+        // console.log(arr.join(''));
+
+
+        let obj =
+            [
+                { name: 'John', age: 30 },
+                { name: 'Jane', age: 25 },
+                { name: 'Bob', age: 40 }
+            ]
+
+        // let newobj = obj.map((ele) => {
+        //     return {
+        //         ...ele,
+        //         age: ele.age * 2
+        //     }
+        // })
+        // console.log(newobj);
+
+        let arr = [3, 4, 55, 66, 6, 9, 7, 9, 9]
+
+        // obj.forEach((num, ind) => {
+        //     console.log(`number is ${num.name} and ${num.age}, this is index ${ind}`);
+        // })
+
+        // console.log(obj.filter((ele, x) => {
+        //     return ele.age >= 30
+        // }));
+
+
+        // // Example: Array of objects
+        // const people = [
+        //     { name: 'John', age: 30 },
+        //     { name: 'Jane', age: 25 },
+        //     { name: 'Bob', age: 40 }
+        // ];
+
+        // // Using map() to transform the array of objects
+        // const transformedPeople = people.map(person => {
+        //     return {
+        //         ...person, // Spread operator to include existing properties
+        //         ageInFiveYears: person.age + 5 // Adding a new property
+        //     };
+        // });
+
+        // // Output the transformed array
+        // console.log(transformedPeople);
+
+
+
+        // Abstraction example
+        function person(fname, lname) {
+            let firstname = fname;
+            let lastname = lname;
+
+            let getDetails_noaccess = function () {
+                return (`First name is: ${firstname} Last 
+			name is: ${lastname}`);
+            }
+
+            this.getDetails_access = function () {
+                return (`First name is: ${firstname}, Last 
+			name is: ${lastname}`);
+            }
+        }
+        let person1 = new person('Mukul', 'Latiyan');
+        console.log(person1.firstname);
+        console.log(person1.getDetails_noaccess);
+        console.log(person1.getDetails_access());
+
+    </script>
+</body>
+
+</html>

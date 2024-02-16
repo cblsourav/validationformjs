@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .menu-item h2 {
+            margin-top: 0;
+        }
+
+        .menu-item p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Restaurant Menu</h1>
+    </header>
+    <div class="menu">
+        <div class="menu-item">
+            <h2 id="1st" style="color: green" class="economy">Spaghetti Bolognese</h2>
+            <p>Traditional Italian pasta with homemade sauce.</p>
+            <p>Price: $12.99</p>
+        </div>
+        <div class="menu-item" id="2nd">
+            <h2>Grilled Salmon</h2>
+            <p>Freshly grilled salmon served with roasted vegetables.</p>
+            <p>Price: $15.99</p>
+        </div>
+        <div class="menu-item" id="3rd">
+            <h2>Caesar Salad</h2>
+            <p>Classic Caesar salad with romaine lettuce, croutons, and Parmesan cheese.</p>
+            <p>Price: $8.99</p>
+        </div>
+        <div class="menu-item" id="4th">
+            <h2>Margherita Pizza</h2>
+            <p>Traditional Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.</p>
+            <p>Price: $10.99</p>
+        </div>
+        <div id="myDiv" style="color: green;">This is a div element.</div>
+
+    </div>
+
+    <script>
+        // let element = document.domain
+        // console.log(element);
+
+        // let one = 'my name is "sourav" '
+
+        // let element = document.getElementById('1st')
+        // element.innerText = "indian food"
+
+        // console.log(element);
+
+        let element = document.getElementsByTagName('p')
+
+        
+
+        // console.log(element[1]);
+
+        // let element = document.getElementById('1st').innerText
+
+        // console.log(element);
+
+
+        // let element = document.getElementById('1st').getAttribute('class')
+
+        // console.log(element);
+
+        // let element = document.getElementById('1st').getAttributeNode('class')
+
+        // console.log(element);
+
+
+        // let element = document.getElementById('1st').innerText
+
+        // console.log(element);
+
+
+        // document.getElementById('1st').innerText = 'hello'
+
+        // let element1 = document.getElementById('1st').innerText
+
+        // console.log(element1);
+
+
+        // document.querySelector('#1st').innerText = 'hello'
+
+        // let element1 = document.querySelector().innerText
+
+        // console.log(element1);
+
+        //==================doubt
+
+        // let n = document.getElementById('1st').removeAttribute('style')
+
+        // console.log(n);
+
+
+        // let divElement = document.getElementById('myDiv');
+
+        // // Set a new attribute called "data-color" with the value "blue"
+        // divElement.setAttribute('style', 'color: green');
+
+        //================== tagname
+        // document.querySelector('h2').innerText = 'hello'
+
+        // let x = document.querySelectorAll('.menu-item h2')[3].innerText
+        // console.log(x);
+
+        //================== create element 
+
+        // let newEl = document.createElement('div')
+
+        // newEl.setAttribute('style', 'color: green')
+        // newEl.innerText = 'new child is append on body'
+
+        // let targetDiv = document.querySelector('.menu-item')
+
+        // targetDiv.appendChild(newEl)
+
+    </script>
+</body>
+
+</html>

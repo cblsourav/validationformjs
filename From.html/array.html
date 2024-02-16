@@ -15,7 +15,7 @@
         // let num = [3, 1, 3, 7, 8, 9]
 
         // let num2 = num.map((a, b, arr) => {
-        //     return a+b
+        //     return arr
         // })
 
         // document.write(num + "<br>")
@@ -506,9 +506,7 @@
         //     }
         // }
 
-        // // Removed the console.log from here, as fetchApi is asynchronous
-
-        // // Added the event listener to the button
+        // Added the event listener to the button
         // btn2.addEventListener("click", fetchApi);
 
 
@@ -533,11 +531,260 @@
         // })();
         // getApi
 
-        let a = [3, 5, 2, 3, 5, 6, 4]
-        const sum = a.reduce((acc, curr) => {
-            return acc + curr
-        }, 0)
-        console.log(sum);
+        // let a = [3, 5, 2, 3, 5, 6, 4]
+        // const sum = a.reduce((acc, curr) => {
+        //     return acc + curr
+        // }, 0)
+        // console.log(sum);
+
+        // const myObject = {
+        //     name: 'John',
+        //     age: 25,
+        //     city: 'Exampleville'
+        // };
+
+        // // Using for...in loop to iterate over object properties
+        // for (let key in myObject) {
+        //     if (myObject.hasOwnProperty(key)) {
+        //         // Checking hasOwnProperty to exclude properties from the prototype chain
+        //         console.log(`${key}: ${myObject[key]}`);
+        //     }
+        // }
+        // const myArray = [10, 20, 30];
+
+        // // Using for...in loop with an array (not recommended)
+        // for (let index in myArray) {
+        //     console.log(`Index ${index}: ${myArray[index]}`);
+        // }
+
+        // const hello = (a, b) => {
+        //     console.log(a + b);
+        // }
+
+        // const sum = (a, b, callback) => {
+        //     callback(a, b);
+        // }
+        // sum(1, 5, hello);
+
+        // for (i = 0; i < 5; i++) {
+        //     let str = ""
+        //     for (j = 0; j < 5; j++) {
+        //         str = str + j
+        //     }
+        //     console.log(str, i);
+        // }
+
+        // const hello = (dataId, getNextData) => 
+        // {
+        //     setTimeout(() => 
+        //     {
+        //         console.log(`data: ${dataId}`);
+        //         if (getNextData) 
+        //         {
+        //             getNextData()
+        //         }
+        //     }, 2000)
+        // }
+
+        // hello(1, () => 
+        // {
+        //     hello(2, () => 
+        //     {
+        //         hello(3)
+        //     })
+        // })
+
+
+        // for (i = 0; i <= 5; i++) {
+
+        //     for (j = 0; j <= i; j--) {
+        //         document.write('*')
+        //     }
+        //     document.write('&')
+        // }
+
+
+        // for (var i = 1; i <= 5; i++) {
+        //     for (var j = 1; j <= 5 - i; j++) {
+        //         document.write('&nbsp;&nbsp;')
+        //     }
+        //     for (var k = 1; k <= i; k++) {
+        //         document.write('*')
+        //     }
+        //     // for (var l = 2; l <= i; l++) {
+        //     //     // document.write('*')
+        //     // }
+        //     document.write('<br>')
+        // }
+
+
+        // for in loop
+        // let obj = {
+        //     name: 'sourav',
+        //     class: 'economy',
+        //     age: 25,
+        // }
+
+        // for (const key in obj) {
+        //     console.log(obj[key]);
+        // }
+
+        // // for of loop
+        // let object = ['sourav', 'kumar', 29]
+
+        // for (const iterator of object) {
+        //     console.log(iterator);
+        // }
+
+
+        // it is create promise
+
+
+        // function first(a) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('first PRomise');
+        //             resolve("sucsess First")
+        //             // reject('error')
+        //         }, 4000)
+        //     })
+        // }
+        // function Second() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('Second Promise');
+        //             resolve("sucsess 2nd")
+        //             // reject('error')
+        //         }, 4000)
+        //     })
+        // }
+
+        // function Third() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('Third Promise');
+        //             resolve("sucsess Third")
+        //             // reject('error')
+        //         }, 4000)
+        //     })
+        // }
+        // it is handle promises
+
+        // first(1).then((res) => {
+        //     console.log('Ist', res);
+        //     first(2).then((res) => {
+        //         console.log('second', res);
+        //         first(3).then((res) => {
+        //             console.log('third', res);
+        //         })
+        //     })
+        // })
+
+        // (async function () {
+        //     console.log('first');
+        //     await first(1)
+        //     console.log('second');
+        //     await first(2)
+        //     console.log('third');
+        //     await first(3)
+        //     console.log('forth');
+        //     await first(4)
+        //     console.log('fifth');
+        //     await first(5)
+        // })();
+
+        // (function (arr, fn) {
+        //     let arr1 = [4, 5, 6, 7]
+        //     arr1.map((arr, fn) => {
+        //         arr3 = arr + fn
+        //         console.log(arr3);
+        //     })
+        // })();
+
+        // function app() {
+        //     let arr1 = [4, 5, 6, 7]
+        //     for (key of arr1) {
+        //         arr3 = []
+        //         arr2 = key + 1
+        //         arr3.push(arr2)
+        //         console.log(arr2);
+        //     }
+        //     console.log(arr3);
+        // }
+
+
+        // const URL = 'https://meowfacts.herokuapp.com/'
+
+        //     (async function () {
+        //         let response = await fetch(URL);
+        //         console.log(response);
+        //         let data = await response
+        //         console.log(data);
+        //     })();
+
+        // const greet = 'HEllo world'
+
+        // for (const gret of greet) {
+        //     if (gret === " ") {
+        //         continue;
+        //     }
+        //     console.log(gret);
+        // }
+
+
+        // for (let i = 0; i <= 5; i--) {
+        //     for (let j = 0; j < 5; j++) {
+        //         document.write("*")
+        //     }
+        //     document.write("<br>")
+        // }f
+
+
+
+        let obj = {
+            name: 'Sourav',
+        }
+        let data = new Map([
+            ['name', 'sourav'],
+            [10, 'this is the number value'],
+            [em = () => { return console.log('hii'); }, 'this is arrow function']
+        ])
+
+        // data.set('city', 'delhi')
+
+        // console.log(data.has('abc'));
+        console.log(data.size);
+        // console.log(data.delete(10));
+        // console.log(data);
+
+        // data.forEach((v,k)=>{
+        //     console.log(k,':',v);
+        // })
+
+        // for([x,y]of data){
+        //     console.log(x,y);
+        // }
+
+
+        let obj1 = {
+            name: 'sourav',
+            class: 'economy',
+        }
+
+        // for (x of Object.keys(obj1)) {
+        //     console.log(x+':', obj1[x]);
+        // }
+
+        const fruits = new Map([
+            [obj1, 800],
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ])
+
+        for (const [x, y] of fruits) {
+            console.log(x, y);
+        }
 
     </script>
 </body>

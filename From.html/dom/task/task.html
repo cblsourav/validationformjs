@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = prompt('enter your word')
+
+        let newStr = []
+
+        for (let i = 0; i <= str.length; i++) {
+            var value1 = str.charCodeAt(i)
+            if (value1 <= 90) {
+                upr = value1 + 32
+                let convertedVlue = String.fromCharCode(upr)
+                newStr.push(convertedVlue)
+            } else {
+                lwr = value1 - 32
+                let convertedVlue = String.fromCharCode(lwr)
+                newStr.push(convertedVlue)
+
+            }
+        }
+        let result = newStr.join('')
+
+        document.write(result);
+
+        //------------------------ 2nd
+
+        // let arr = [8, 6, 7, 4, 2]
+
+        // for (let j = 0; j < arr.length; j++) {
+        //     for (let i = 0; i < arr.length - 1; i++) {
+        //         if (arr[i] > arr[i + 1]) {
+        //             var num = arr[i]
+        //             arr[i] = arr[i + 1]
+        //             arr[i + 1] = num
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+        // console.log(`4th highest ${arr[3]}`);
+
+        //------------------------ 3rd
+        // let arr = [
+        //     [2, 3, 4],
+        //     [3, 4, 6],
+        //     [1, 2, 8]
+        // ]
+        // let newArr = []
+        // let newArr1 = []
+        // let sum = 0
+        // let count = 0
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     newArr.push(arr[i][i])
+        //     newArr1.push(arr[i][arr.length - 1 - i])
+        // }
+
+        // console.log(newArr);
+        // console.log(newArr1);
+
+        // for (let j = 0; j < newArr.length; j++) {
+        //     sum = sum + newArr[j]
+        // }
+        // console.log(sum);
+
+        // for (let j = 0; j < newArr.length; j++) {
+        //     count = count + newArr1[j]
+        // }
+        // console.log(count);
+
+        //------------------------ 4th
+
+        // let arr = [3, 5, 7, 8, 88, 6, 5, 5, 5, 8]
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = 0; j < arr.length - 1; j++) {
+        //         if (arr[j] > arr[j + 1]) {
+        //             let num = arr[j]
+        //             arr[j] = arr[j + 1]
+        //             arr[j + 1] = num
+        //         }
+        //     }
+        // }
+
+        // console.log(arr);
+        // // [3, 5, 5, 5, 5, 6, 7, 8, 8, 88]
+        // let newArr1 = []
+        // for (let k = 0; k < arr.length; k++) {
+        //     isDuplicate = false;
+        //     for (let l = 0; l < newArr1.length; l++) {
+        //         if (arr[l] === newArr1[j]) {
+        //             isDuplicate = true;
+        //             break;
+        //         }
+        //         if (!isDuplicate) {
+        //             newArr1.push(arr[k])
+        //         }
+        //     }
+        // }
+
+        // console.log(newArr1);
+
+
+        //========================== 5th
+
+        // let arr = [2, 4, 5, 6, 7]
+        // let str = 'sourav'
+
+        // let newJoinArr = arr.join('')
+        // console.log(newJoinArr);
+
+        // let newSplit = newJoinArr.split('')
+
+        // console.log(newSplit);
+
+        // console.log('new   ');
+
+
+        // let str1 = str.split('');
+        // console.log(str1);
+        // let joinedStr = str1.join('');
+        // console.log(joinedStr);
+
+        //========================== 6th
+        let num = [3, 1, 3, 7, 8, 9]
+
+        // let num2 = num.map((a, b, arr) => {
+        //     return a*b
+        // })
+        // console.log(num2);
+
+        // let newA = num.filter((acc) => {
+        //     return acc > 3
+        // })
+
+        // console.log(newA);
+
+
+        // hello()
+
+
+        // function hello() {
+        //     console.log('hiii');
+        // }
+
+        // var hello = () => {
+        //     console.log('hiii');
+        // }
+
+    </script>
+</body>
+
+</html>

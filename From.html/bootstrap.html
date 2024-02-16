@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Modal Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Open Modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="p-4 pl-1">
+                    <label class="txt" for="userName">Name:</label><br>
+                    <input type="text" id="userName" name="userName"
+                        style="font-size: 15px; height: 20px; width: 200px;" placeholder="Enter your Name">
+                </div>
+                <span style="color: red;" id="nameError"></span>
+                <div class="p-4 pl-3">
+                    <label class="txt" for="userContact">Mobile number:</label><br>
+                    <input type="text" id="userContact" name="userContact" style="font-size: 15px; width: 200px;"
+                        placeholder="Mobile number">
+                </div>
+                <span style="color: red;" id="contactError"></span>
+                <div class="p-4 pl-3">
+                    <label class="txt" for="userAddress">Enter Email Address:</label><br>
+                    <input type="text" id="userAddress" name="userAddress" style="font-size: 15px; width: 200px;"
+                        placeholder="Enter your Address">
+                </div>
+                <span style="color: red;" id="addressError"></span>
+                <div class="p-4 pl-3">
+                    <label class="txt" for="userForm">Password:</label><br>
+                    <input type="text" id="Password" name="Password" style="font-size: 20px; width: 200px;"
+                        placeholder="">
+                </div>
+                <span style="color: red;" id="passwordError"></span>
+                <div class="p-4 pl-3">
+                    <label class="txt" for="userTo">Confirm Password:</label><br>
+                    <input type="text" id="ConfirmPassword" name="ConfirmPassword"
+                        style="width: 200px; font-size: 20px;" placeholder="">
+                </div>
+                <span style="color: red;" id="confirmError"></span>
+                <br>
+                <div class="p-4 pl-3">
+                    <label class="txt">Select your gender:</label>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </div><br>
+                <span style="color: red;" id="genderError"></span>
+                <div class="p-4 pl-3">
+                    <label class="txt">Hobbies:</label><br>
+                    <input type="checkbox" id="cricket" name="hobbies[]" class="checkbox" value="cricket">
+                    <label for="cricket">Cricket:</label>
+                    <input type="checkbox" id="singing" name="hobbies[]" class="checkbox" value="singing">
+                    <label for="singing">Singing:</label>
+                    <input type="checkbox" id="chess" name="hobbies[]" class="checkbox" value="chess">
+                    <label for="chess">Chess:</label>
+                    <input type="checkbox" id="other" name="hobbies[]" class="checkbox" value="other">
+                    <label for="other">Other:</label>
+                </div><br>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

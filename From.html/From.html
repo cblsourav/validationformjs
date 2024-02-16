@@ -18,7 +18,6 @@
         height: 1200px;
         position: relative;
         z-index: -1;
-
     }
 
     #bground {
@@ -131,13 +130,13 @@
                 <span style="color: red;" id="addressError"></span>
                 <div class="inputBox">
                     <label class="txt" for="userForm">Password:</label><br>
-                    <input type="password" id="Password" name="Password" style="font-size: 20px; width: 200px;"
+                    <input type="text" id="Password" name="Password" style="font-size: 20px; width: 200px;"
                         placeholder="">
                 </div>
                 <span style="color: red;" id="passwordError"></span>
                 <div class="inputBox">
                     <label class="txt" for="userTo">Confirm Password:</label><br>
-                    <input type="password" id="ConfirmPassword" name="ConfirmPassword"
+                    <input type="text" id="ConfirmPassword" name="ConfirmPassword"
                         style="width: 200px; font-size: 20px;" placeholder="">
                 </div>
                 <span style="color: red;" id="confirmError"></span>
@@ -374,7 +373,7 @@
 
             if (validation === true) {
                 alert('Form submitted successfully!');
-                location.reload()
+                // location.reload()
 
                 let data = []; // <---------- ARRAY DATA CREATE FOR STORING INDIVIDUAL RECORD --------<<
                 data[0] = userName;
@@ -488,8 +487,8 @@
             document.getElementById('userName').value = data[0];
             document.getElementById('userContact').value = data[1];
             document.getElementById('userAddress').value = data[2];
-            // document.getElementById('Password').value = data[3];
-            // document.getElementById('ConfirmPassword').value = data[4];
+            document.getElementById('Password').value = data[3];
+            document.getElementById('ConfirmPassword').value = data[4];
 
             // Set gender
             let genderRadios = document.querySelectorAll('input[name="gender"]');

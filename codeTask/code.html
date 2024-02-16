@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://127.0.0.1:5500/newTask/index.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./whythiscolavary_files/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Name:</strong> Ashwini</p>
+                    <p><strong>Age:</strong> 23</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Image:</strong> <img src="./whythiscolavary_files/pexels-photo-91227.jpeg" width="100">
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./whythiscolavary_files/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="./whythiscolavary_files/popper.min.js" crossorigin="anonymous"></script>
+    <script src="./whythiscolavary_files/bootstrap.min.js" crossorigin="anonymous"></script>
+   
+
+
+    <script src="./whythiscolavary_files/sweetalert2@11"></script>
+
+    <script>
+        let users = [
+            {
+                name: 'Ashwini',
+                age: 23,
+                gender: 'Male',
+                img: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+            },
+            {
+                name: 'Rohan',
+                age: 43,
+                gender: 'Male',
+                img: 'https://images.pexels.com/photos/35537/child-children-girl-happy.jpg',
+            }, {
+                name: 'Avantika',
+                age: 13,
+                gender: 'Female',
+                img: https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg,
+            }, {
+                name: 'Simran',
+                age: 33,
+                gender: 'Female',
+                img: https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2,
+            }, {
+                name: 'Savita',
+                age: 23,
+                gender: 'Female',
+                img: https://images.pexels.com/photos/1755385/pexels-photo-1755385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2,
+            },
+        ]
+
+        let thead = document.querySelector('#header')
+        let tbody = document.querySelector('#data')
+        let addBtn = document.querySelector('#Add')
+        let modalView = document.querySelector('.modal-body')
+
+
+        const addData = () => {
+            tbody.innerHTML = ''
+            users.forEach((user, index) => {
+                //================ add name in table=================//
+                let row = document.createElement('tr');
+
+                row.addEventListener('mouseenter', () => {
+                    row.style.backgroundColor = 'yellow';
+                    row.style.fontSize = "20px";
+                });
+
+                let nameCell = document.createElement('td');
+                nameCell.innerText = user.name
+                row.appendChild(nameCell)
+
+                //================ add age in table=================//
+
+                let ageCell = document.createElement('td');
+                ageCell.innerHTML = user.age
+                row.appendChild(ageCell);
+
+                //================ add Gender in table=================//
+
+                let genderCell = document.createElement('td');
+                genderCell.innerText = user.gender
+                row.appendChild(genderCell);
+
+                //================ add image in table=================//
+
+                let imgCellTd = document.createElement('td');
+                let img = document.createElement('img');
+                img.src = user.img;
+                img.width = 70;
+                img.height = 70;
+                img.style.borderRadius = '50%';
+                imgCellTd.appendChild(img);
+                row.appendChild(imgCellTd);
+
+                //================ add Delete Button=================//
+
+                let deletTh = document.createElement('td');
+                let delet = document.createElement('button');
+                delet.innerHTML = 'Delete';
+                delet.style.borderRadius = '20px';
+                delet.style.color = '#fff';
+                delet.style.backgroundColor = 'red';
+
+                deletTh.appendChild(delet);
+                row.appendChild(deletTh);
+
+                delet.addEventListener('click', function Remove() {
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "You won't be able to revert this!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, delete it!"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            }).then(() => {
+                                tbody.removeChild(row);
+                            });
+                        }
+                    });
+                });
+
+                // Create the "View" button
+                let modalId = "exampleModal";
+                let viewTh = document.createElement('td');
+                let view = document.createElement('button');
+                view.innerHTML = 'View';
+                view.setAttribute('class', 'btn btn-primary viewBtn');
+                view.setAttribute('data-bs-toggle', 'modal');
+                view.setAttribute('data-bs-target', #${ modalId });
+                view.setAttribute('data-index', index);
+                console.log(view, 'keiwweicfeiwbvhi');
+                view.style.borderRadius = '20px';
+                view.style.color = '#fff';
+                view.style.backgroundColor = '#406b9f';
+
+                //================== Set up a click event listener for the "View" button ====================//
+                view.addEventListener('click', function () {
+                    //==================== Get the index of the user from the data-index attribute====================//
+                    let index = parseInt(view.getAttribute('data-index'));
+                    //================== Get the user data based on the index====================//
+                    let user = users[index];
+                    //================= Populate modal content with user data====================//
+                    let modalBody = document.querySelector('.modal-body');
+                    modalBody.innerHTML = `
+        <p><strong>Name:</strong> ${user.name}</p>
+        <p><strong>Age:</strong> ${user.age}</p>
+        <p><strong>Gender:</strong> ${user.gender}</p>
+        <p><strong>Image:</strong> <img src="${user.img}" width="100"></p>
+    `;
+                });
+
+                viewTh.appendChild(view);
+                row.appendChild(viewTh);
+                tbody.appendChild(row);
+            })
+        }
+
+        addBtn.addEventListener('click', addData);
+
+    </script>
+
+    </body>
+
+</html>

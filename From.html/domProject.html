@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="align-items: center;">
+    <!-- <div style="display: flex; justify-content: center;">
+        <div style="flex: 1; text-align: center;">
+            <img src="https://img.freepik.com/free-photo/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1707177600&semt=sph"
+                alt="" style="height: 150px;width: 150px; border-radius: 100px;">
+            <h1>Sam</h1>
+            <h3>Stranger</h3>
+            <button>Add friend</button>
+        </div>
+    </div> -->
+    <script>
+        // let btn = document.querySelector('button')
+        // let istatus = document.querySelector('h3')
+        // let a = 0;
+        // btn.addEventListener('click', () => {
+        //     if (a == 0) {
+        //         btn.innerText = 'Remove'
+        //         istatus.innerText = 'Friend'
+        //         btn.style.backgroundColor = 'green'
+        //         btn.style.color = 'white'
+        //         a = 1
+        //     } else {
+        //         btn.innerText = 'Add friend'
+        //         istatus.innerText = 'Stranger'
+        //         btn.style.backgroundColor = 'red'
+        //         btn.style.color = 'white'
+        //         a = 0
+        //     }
+        // })
+
+        // let arr = [3, 4, -5, 6, -7, 8, -5, 5.6, 9.5]
+
+        // let sum = 0
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] > 0 && Number.isInteger(arr[i])) {
+        //         sum += arr[i]
+        //     }
+        // }
+        // console.log(sum);
+
+
+        // let arr = [3, 4, -5, 6, -7, 8, -5];
+        //     let sum = 0;
+
+        // for (let i = 0; i < arr.length; i++) {
+
+        //     if(arr[i]>0){
+        //         sum =  sum + arr[i]
+        //     }
+        // }
+
+        // console.log(sum);
+
+
+        // let obj = [
+        //     { name: 'sourav', marks: 90 },
+        //     { name: 'gourav', marks: 100 },
+        //     { name: 'preeti', marks: 70 },
+        //     { name: 'raavi', marks: 60 },
+        //     { name: 'rajeev', marks: 170 },
+        // ]
+
+        // for (let i = 0; i < obj.length; i++) {
+        //     if (obj[i].marks > 70) {
+        //         console.log(obj[i].name);
+        //     }
+        // }
+        var arr = [64, 34, 25, 12, 22, 11, 90];
+
+        var len = arr.length;
+
+        for (var i = 0; i < len; i++) {
+            for (var j = 0; j < len - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    var num = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = num;
+                }
+            }
+        }
+
+        console.log("array: " + arr);
+
+
+        // let dataAPi = fetch('https://cat-fact.herokuapp.com/facts')
+
+        // dataAPi.then(response => {
+        //     return response.json();
+        // }).then(data => {
+        //     console.log(data);
+        // }).catch(error => {
+        //     console.error('There was a problem with the fetch operation:', error);
+        // });
+
+
+        // (async function fetchData() {
+        //     try {
+        //         const response = await fetch('https://cat-fact.herokuapp.com/facts');
+        //         const data = await response.json();
+        //         console.log(data[0].text);
+        //     } catch (error) {
+        //         console.error('There was a problem with the fetch operation:', error);
+        //     }
+        // })();
+
+        // Call the fetchData function
+        // fetchData();
+
+
+        // const arr = ['sourav', 4, 6, 'sidhu', 8, 7, 7]
+        // let total = 0
+
+        // function sum() {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (typeof arr[i] === 'number') {
+        //             total += arr[i]
+        //         }
+        //     }
+        //     return total;
+        // }
+
+        // console.log(sum());
+
+        // const arr = ['sourav', 4, 6, 'sidhu', 8, 7, 7];
+        // let totalSum = 0;
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (typeof arr[i] === 'number') {
+        //         totalSum += arr[i];
+        //     }
+        // }
+
+        // console.log(totalSum); 
+
+
+        var x = 10;
+        console.log(x);
+
+        function foo() {
+            var x = 20;
+            console.log(x);
+        }
+
+        foo();
+        console.log(x);
+
+
+        // let x = 10;
+        // console.log(x);
+
+        // if (true) {
+        //     let x = 20;
+        //     console.log(x);
+        // }
+
+        // console.log(x);
+
+        // const x = 10;
+        // console.log(x);
+
+        //  x = 20;
+
+        // const person = { name: 'John', age: 30 };
+        // console.log(person);
+
+        // person.age = 40;
+        // console.log(person); 
+    </script>
+</body>
+
+</html>

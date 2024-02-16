@@ -5,163 +5,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body style="background-color: grey;">
-    <div>
-        <form action="#" id="myform">
-            <div class="inputBox">
-                <label class="txt" for="userName">Name:</label><br>
-                <input type="text" id="userName" name="userName"
-                    style="font-size: 15px; height: 20px; width: 200px;" placeholder="Enter your Name">
-            </div>
-            <span id="nameError"></span>
-            <span id="nameError" style="color: red;" ></span>
-            <div class="inputBox" style="margin: 5px;">
-                <label class="txt" for="userContact">Contact</label> <br>
-                <input type="text" id="userContact" name="userContact"
-                    style="font-size: 15px; height: 20px; width: 200px;" placeholder="Enter your Mobile Number">
-            </div>
-            
-            <span id="contactError" style="color: red;"></span>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Open Modal
+    </button>
 
-            <div class="inputBox" style="margin: 5px;">
-                <label for="emailAddress">Enter your Email Address</label> <br>
-                <input type="text" name="emailAddress" id="emailAddress" placeholder="Enter your Email"
-                    style="font-size: 15px; height: 20px; width: 200px;">
-            </div>
-
-            <span id="emailError"></span>
-
-            <div class="inputBox" style="margin: 5px;">
-                <label for="password">Enter Your Password</label> <br>
-                <input type="password" id="password" name="password" placeholder=""
-                    style="font-size: 15px; height: 20px; width: 200px;">
-            </div>
-
-            <span id="passwordError" style="color: red;"></span>
-
-            <div class="confirmPassword" style="margin: 5px;">
-                <label for="confirmPassword">Confirm Password</label> <br>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder=""
-                    style="font-size: 15px; height: 20px; width: 200px;">
-            </div>
-
-            <span id="confirmError" style="color: red;"></span>
-
-            <div class="inputBox" style="margin: 5px;">
-                <label for="dateofBirth"> Date of Birth</label> <br>
-                <input type="date" id="dateofBirth" name="dateofBirth" placeholder=""
-                    style="font-size: 15px; height: 20px; width: 200px;">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign up form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-            <span id="dobError" style="color: red;"></span>
+                <div>
+                    <form action="#" id="myform">
+                        <div style="padding: 4vh 0vh 0vh 4vh;">
+                            <label class="txt" for="userName">Name:</label><br>
+                            <input type="text" id="userName" name="userName"
+                                style="font-size: 15px; height: 20px; width: 250px; height: 4vh;"
+                                placeholder="Enter your Name">
+                        </div>
 
-            <div class="inputBox" style="margin: 5px;">
-                <label style="margin: 5px;" for="qualification">Qualification</label> <br>
-                <select name="qualification" id="qualification">
-                    <option value="selectone">Select the your Qualification</option>
-                    <option value="BCA">BCA</option>
-                    <option value="Btech">B.Tech</option>
-                    <option value="MCA">MCA</option>
-                </select>
+                        <span id="nameError" style="color: red;"></span>
 
-            <span id="qualificationError" style="color: red;"></span>
+                        <div style="padding: 4vh 0vh 0vh 4vh; ">
+                            <label class="txt" for="userContact">Contact</label> <br>
+                            <input type="text" id="userContact" name="userContact" required
+                                style="font-size: 15px; height: 20px; width: 250px; height: 4vh;"
+                                placeholder="Enter your Mobile Number">
+                        </div>
 
-                <div class="inputBox">
-                    <label for="starting">Starting Year</label> <br>
-                    <input type="date" id="starting" name="starting" placeholder="">
+                        <span id="contactError" style="color: red;"></span>
+
+                        <div style="padding: 4vh 0vh 0vh 4vh; ">
+                            <label for="emailAddress">Enter your Email Address</label> <br>
+                            <input type="text" name="emailAddress" id="emailAddress" placeholder="Enter your Email"
+                                style="font-size: 15px; height: 20px; width: 250px; height: 4vh; ">
+                        </div>
+
+                        <span id="emailError" style="color: red;"></span>
+
+                        <div style="padding: 4vh 0vh 0vh 4vh; ">
+                            <label for="password">Enter Your Password</label> <br>
+                            <input type="password" id="password" name="password"
+                                style="font-size: 15px; height: 20px; width: 250px; height: 4vh;">
+                        </div>
+
+                        <span id="passwordError" style="color: red;"></span>
+
+
+
+                        <div style="padding: 4vh 0vh 0vh 4vh; ">
+                            <label for="confirmPassword">Confirm Password</label> <br>
+                            <input type="password" id="confirmPassword" name="confirmPassword"
+                                style="font-size: 15px; height: 20px; width: 250px; height: 4vh;">
+                        </div>
+
+                        <span id="confirmError" style="color: red;"></span>
+
+                        <div style="padding: 4vh 0vh 0vh 4vh; ">
+                            <label for="dateofBirth"> Date of Birth</label> <br>
+                            <input type="date" id="dateofBirth" name="dateofBirth"
+                                style="font-size: 15px; height: 20px; width: 250px; height: 4vh;">
+                        </div>
+
+                        <span id="DOBError" style="color: red;"></span>
+
+                        <div style="padding: 4vh 0vh 0vh 4vh; ">
+                            <label style="height: 4vh;" for="qualification">Qualification</label> <br>
+                            <select style="height: 4vh; width: 250px;" name="qualification" id="qualification">
+                                <option value="selectone">Select the your Qualification</option>
+                                <option value="BCA">BCA</option>
+                                <option value="Btech">B.Tech</option>
+                                <option value="MCA">MCA</option>
+                            </select>
+
+                            <span id="qualificationError" style="color: red;"></span>
+
+                            <div style="padding: 4vh 0vh 0vh 0vh; ">
+                                <label for="starting">Starting Year</label> <br>
+                                <input style="height: 4vh; width: 250px;" type="date" id="starting" name="starting">
+                            </div>
+
+                            <span id="startError" style="color: red;"></span>
+
+                            <div style="padding: 4vh 0vh 0vh 0vh;" >
+                                <label for="passing">Passing Year</label> <br>
+                                <input style="height: 4vh; width: 250px;" type="date" id="passing" name="passing">
+                            </div>
+                            <span id="passingError" style="color: red;"></span>
+                            <div style="padding: 4vh 0vh 0vh 0vh;" >
+                                <label class="txt">Select your gender:</label>
+                                <input type="radio" name="gender" value="male"> Male
+                                <input type="radio" name="gender" value="female"> Female
+                                <input type="radio" name="gender" value="other"> Other
+                            </div><br>
+                            <span style="color: red;" id="genderError"></span>
+                            <div>
+                                <label class="txt">Hobbies:</label><br>
+                                <input type="checkbox" id="cricket" name="hobbies[]" class="checkbox" value="cricket">
+                                <label for="cricket">Cricket:</label>
+                                <input type="checkbox" id="singing" name="hobbies[]" class="checkbox" value="singing">
+                                <label for="singing">Singing:</label>
+                                <input type="checkbox" id="chess" name="hobbies[]" class="checkbox" value="chess">
+                                <label for="chess">Chess:</label>
+                                <input type="checkbox" id="other" name="hobbies[]" class="checkbox" value="other">
+                                <label for="other">Other:</label>
+                            </div><br>
+                            <span style="color: red;" id="hobbiesError"></span>
+                            <div class="submitButton">
+                                <button type="reset" id="resetBtn">Reset</button>
+                            </div>
+                    </form>
                 </div>
 
-                <span id="startError" style="color: red;"  ></span>
-
-                <div class="inputBox">
-                    <label for="passing">Passing Year</label> <br>
-                    <input type="date" id="passing" name="passing" placeholder="">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="validateForm()">Save changes</button>
                 </div>
-                <span id="passingError" style="color: red;" ></span>
-                <div class="inputBox">
-                    <label class="txt">Select your gender:</label>
-                    <input type="radio" name="gender" value="male"> Male
-                    <input type="radio" name="gender" value="female"> Female
-                    <input type="radio" name="gender" value="other"> Other
-                </div><br>
-                <span style="color: red;" id="genderError"></span>
-                <div class="inputBox">
-                    <label class="txt">Hobbies:</label><br>
-                    <input type="checkbox" id="cricket" name="hobbies[]" class="checkbox" value="cricket">
-                    <label for="cricket">Cricket:</label>
-                    <input type="checkbox" id="singing" name="hobbies[]" class="checkbox" value="singing">
-                    <label for="singing">Singing:</label>
-                    <input type="checkbox" id="chess" name="hobbies[]" class="checkbox" value="chess">
-                    <label for="chess">Chess:</label>
-                    <input type="checkbox" id="other" name="hobbies[]" class="checkbox" value="other">
-                    <label for="other">Other:</label>
-                </div><br>
-                <span style="color: red;" id="hobbiesError"></span>
-                <div class="submitButton">
-                    <button type="button" id="submitButton" onclick="validateForm()">Submit</button>
-                    <button type="reset" id="resetBtn">Reset</button>
-                </div>
-        </form>
+            </div>
+        </div>
     </div>
+
 </body>
 <script>
-    let userName = document.getElementById('userName').value;
-    let userContact = document.getElementById('userContact').value.trim();
-    let userEmail = document.getElementById('emailAddress').value.trim(); 
-    let userPassword = document.getElementById('password').value.trim(); 
-    let userConfirmPassword = document.getElementById('confirmPassword').value.trim(); 
-    let DOB = document.querySelector('#dateofBirth').value; 
-    let qualification = document.querySelector('#qualification').value;
-    let starting = document.querySelector('#starting').value;
-    let passing = document.querySelector('#passing').value;
-    let gender = document.querySelector( `input[name="gender"]:checked`);
-    let hobbies = document.querySelectorAll(`input[name="hobbies[]"]:checked`);
+    const validateForm = () => {
+
+        let userName = document.getElementById('userName').value.trim();
+        let userContact = document.getElementById('userContact').value.trim();
+        let userEmail = document.getElementById('emailAddress').value.trim();
+        let userPassword = document.getElementById('password').value.trim();
+        let userConfirmPassword = document.getElementById('confirmPassword').value.trim();
+        let DOB = document.querySelector('#dateofBirth').value;
+        let qualification = document.querySelector('#qualification').value;
+        let starting = document.querySelector('#starting').value;
+        let passing = document.querySelector('#passing').value;
+        let gender = document.querySelector(`input[name="gender"]:checked`);
+        let hobbies = document.querySelectorAll(`input[name="hobbies[]"]:checked`);
+
+        let checkedValues = Array.from(hobbies).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
 
-    // Error Dispaly
-
-    nameError = document.getElementById("nameError").innerHTML = "" 
-
-    const validateForm = () => 
-    {
-        if (!userName) 
-        {
-               document.getElementById('nameError').innerHTML = "PLez enter your name"
+        if (!userName) {
+            document.getElementById('nameError').innerHTML = "Please enter your name"
         }
-        
+        if (!userContact) {
+            document.getElementById('contactError').innerHTML = "Please enter Phone number"
+        }
+        if (!userEmail) {
+            document.getElementById('emailError').innerHTML = "Please enter your email address"
+        }
+        if (!userPassword) {
+            document.getElementById('passwordError').innerHTML = "Please enter your password"
+        } if (!userConfirmPassword) {
+            document.getElementById('confirmError').innerHTML = "Please confirm your password"
+        }
+        if (userPassword !== userConfirmPassword) {
+            document.getElementById('confirmError').innerHTML = "Password do not match"
+        }
+        if (!DOB) {
+            document.getElementById('DOBError').innerHTML = "Please enter your Date of Birth"
+        }
+        if (!qualification.length) {
+            document.getElementById('qualificationError').innerHTML = "Fill your qualification"
+        }
+        if (!starting) {
+            document.getElementById('startError').innerHTML = "Please enter your starting year"
+        }
+        if (!passing) {
+            document.getElementById('passingError').innerHTML = "Please enter your passing year"
+        }
+        if (!gender) {
+            document.getElementById('genderError').innerHTML = "Select your Gender"
+        }
+        if (!checkedValues.length) {
+            document.getElementById('hobbiesError').innerHTML = "Choose atleast one"
+        }
     }
 </script>
 
-<!-- else if (!userContact) 
-{
-    alert('Please Enter your Contact');
-}
-else if (!userEmail) {
-    alert('Please Enter your Email Address');
-}
-else if (!userPassword) {
-    alert('Please Enter the password');
-}
-else if (!userConfirmPassword) {
-    alert('Please confirm your Password')
-}
-else if (!DOB) {
-    alert('Please confirm your Password')
-}
-else if (!qualification) {
-    alert('Please confirm your Password')
-}
-else if (!starting) {
-    alert('Please confirm your Password')
-}
-else if (!passing) {
-    alert('Please confirm your Password')
-}
-else if (!hobbies) {
-    alert('Please confirm your Password')
-} -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </html>
