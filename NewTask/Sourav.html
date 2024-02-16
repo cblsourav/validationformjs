@@ -72,7 +72,7 @@
                 name: 'Avantika',
                 age: 13,
                 gender: 'Female',
-                img: `https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg`,
+                img: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg',
                 Address: {
                     city: 'Pinore',
                     State: 'Haryana',
@@ -89,6 +89,18 @@
             tbody.innerHTML = ''
             users.forEach((user, index) => {
                 let row = document.createElement('tr');
+
+                row.addEventListener('mouseenter', () => {
+                    for (let child of row.children) {
+                        child.style.backgroundColor = "yellow";
+                    }
+                });
+
+                row.addEventListener('mouseleave', () => {
+                    for (let child of row.children) {
+                        child.style.backgroundColor = "";
+                    }
+                });
 
                 let nameCell = document.createElement('td');
                 nameCell.innerText = user.name
