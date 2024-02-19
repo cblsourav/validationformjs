@@ -10,7 +10,8 @@
 </head>
 
 <body style="background-color: skyblue;">
-    <button id="Add">Add Data</button>
+    <button style="background-color: aqua; border-radius: 100px; margin: 20px; color: orangered; font-weight: 900;"
+        id="Add">Add Data</button>
     <div style="justify-content: center; align-items: center; margin: 20px;">
         <div style="background-color: #fff; text-align: center; justify-content: center;">
             <table id="studentTable" border="1" class="table table-primary">
@@ -25,17 +26,22 @@
                     </tr>
                 </thead>
                 <tbody id="data">
+                    <!-- --------------------Add data dynamically------------------ -->
                 </tbody>
             </table>
         </div>
     </div>
+
+    <button id="DeleteAll" onclick="DeleteAll()"
+        style="background-color: red; border-radius: 100px; margin-left: 600px; color: white; font-weight: 600;">Delete
+        All</button>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">User details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -63,21 +69,11 @@
                 age: 43,
                 gender: 'Male',
                 img: 'https://images.pexels.com/photos/35537/child-children-girl-happy.jpg',
-                Address: {
-                    city: 'Pinore',
-                    State: 'Haryana',
-                    Pincode: 134102
-                }
             }, {
                 name: 'Avantika',
                 age: 13,
                 gender: 'Female',
                 img: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg',
-                Address: {
-                    city: 'Pinore',
-                    State: 'Haryana',
-                    Pincode: 134102
-                }
             },
         ]
 
@@ -85,19 +81,25 @@
         let tbody = document.querySelector('#data')
         let addBtn = document.querySelector('#Add')
 
-        const addData = () => {
+        const addData = () => 
+        {
             tbody.innerHTML = ''
-            users.forEach((user, index) => {
+            users.forEach((user, index) => 
+            {
                 let row = document.createElement('tr');
 
-                row.addEventListener('mouseenter', () => {
-                    for (let child of row.children) {
+                row.addEventListener('mouseenter', () => 
+                {
+                    for (let child of row.children) 
+                    {
                         child.style.backgroundColor = "yellow";
                     }
                 });
 
-                row.addEventListener('mouseleave', () => {
-                    for (let child of row.children) {
+                row.addEventListener('mouseleave', () => 
+                {
+                    for (let child of row.children) 
+                    {
                         child.style.backgroundColor = "";
                     }
                 });
@@ -133,8 +135,10 @@
                 deletTh.appendChild(delet);
                 row.appendChild(deletTh);
 
-                delet.addEventListener('click', function Remove() {
-                    Swal.fire({
+                delet.addEventListener('click', function Remove() 
+                {
+                    Swal.fire(
+                    {
                         title: "Are you sure?",
                         text: "You won't be able to revert this!",
                         icon: "warning",
@@ -142,13 +146,17 @@
                         confirmButtonColor: "#3085d6",
                         cancelButtonColor: "#d33",
                         confirmButtonText: "Yes, delete it!"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Swal.fire({
+                    }).then((result) => 
+                    {
+                        if (result.isConfirmed) 
+                        {
+                            Swal.fire(
+                            {
                                 title: "Deleted!",
                                 text: "Your file has been deleted.",
                                 icon: "success"
-                            }).then(() => {
+                            }).then(() => 
+                            {
                                 tbody.removeChild(row);
                             });
                         }
@@ -164,23 +172,27 @@
                 view.setAttribute('class', 'btn btn-primary');
                 view.setAttribute("data-bs-toggle", "modal");
 
-                view.addEventListener('click', function () {
+                view.addEventListener('click', function () 
+                {
                     let modal = new bootstrap.Modal(document.getElementById('exampleModal'));
                     let modalBody = document.querySelector('#exampleModal .modal-body');
                     modalBody.innerHTML = `
                         <p>Name: ${user.name}</p>
                         <p>Age: ${user.age}</p>
                         <p>Gender: ${user.gender}</p>
-                        <img src="${user.img}" alt="${user.name}" width="200">
-                    `;
+                        <img src="${user.img}" alt="${user.name}" width="200"`;
                     modal.show();
                 });
 
                 viewTh.appendChild(view);
                 row.appendChild(viewTh);
-
                 tbody.appendChild(row);
             });
+        }
+
+        const DeleteAll = ()=>
+        {
+            tbody.innerHTML = ''
         }
 
         addBtn.addEventListener('click', addData);

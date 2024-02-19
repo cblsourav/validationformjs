@@ -14,24 +14,40 @@
         // }, 1000);
 
 
-        const getId = (id, getnxt) => {
-            setTimeout(() => {
-                console.log('data', id);
-                if (getnxt) {
-                    getnxt();
-                } else {
-                    console.log('no more data');
-                }
-            }, 2000)
-        }
+        // const getId = (id, getnxt) => {
+        //     setTimeout(() => {
+        //         console.log('data', id);
+        //         if (getnxt) {
+        //             getnxt();
+        //         } else {
+        //             console.log('no more data');
+        //         }
+        //     }, 2000)
+        // }
 
-        getId(2, () => {
-            getId(3, () => {
-                getId(4);
-            });
-        })
+        // getId(2, () => {
+        //     getId(3, () => {
+        //         getId(4);
+        //     });
+        // })
+
+
+        console.log(Array.isArray('Sourav'));
+
+        console.log(Array.from('hitesh'));
+
+        let score = 100;
+        let score1 = 200;
+        let score2 = 300;
+
+        console.log(Array.of(score, score1, score2));
 
     </script>
+</body>
+
+</html>
+
+</script>
 </body>
 
 </html>

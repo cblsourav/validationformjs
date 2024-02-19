@@ -7,40 +7,62 @@
     <title>Document</title>
 </head>
 
-<body>
-    <div onclick="oneDiv()" style="background-color: red; height: 150px; width: 150px;">
-        <div onclick="TwoDiv()" style="background-color: aqua; height: 100px; width: 100px">
-            <div onclick="ThreeDiv()" style="background-color: green; height: 50px; width: 50px">
+<body style=" display: flex; justify-content: center; align-items: center; margin: 350px;">
+    <div id="div1" style="background-color: red; height: 150px; width: 150px;">
+        <div id="div2" style="background-color: aqua; height: 100px; width: 100px">
+            <div id="div3" style="background-color: green; height: 50px; width: 50px">
             </div>
         </div>
     </div>
     <script>
-        // const oneDiv = () => {
-        //     alert('hello ist div');
-        // }
-        // const TwoDiv = () => {
-        //     alert('hello two div')
-        // }
-        // const Two2_2 = () => {
-        //     console.log('StopImmediatelyPropagation');
-        // }
-        // const ThreeDiv = () => {
-        //     alert('hello three div');
-        // }
 
+        let div1 = document.querySelector('#div1');
+        let div2 = document.querySelector('#div2');
+        let div3 = document.querySelector('#div3');
 
-        const str = new String('sourav')
+        div1.addEventListener('click', () => {
+            console.log('parent red ')
+            div1.style.padding = "100px"
+        })
+        div2.addEventListener('click', () => {
+            // event.stopImmediatePropagation()
+            event.stopPropagation()
+            console.log('2ndparent skyblue ')
+            div2.style.padding = "100px"
+        })
+
+        div2.addEventListener('click', () => {
+            console.log('2ndparent dblclick skyblue ');
+            div2.style.borderRadius = "100px";
+            div2.style.zIndex = "1";
+        });
+
+        div3.addEventListener('click', () => {
+            console.log('child green');
+            div3.style.padding = "100px"
+        })
+
+        // const str = new String('sourav')
         // const str = 'sourav'
         // console.log(str);
 
+        // let max = 20
+        // let min = 10
 
-        let max = 20
-        let min = 10
 
+        // console.log(Math.floor(Math.random() * (max - min + 1)) + min);
 
-        console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+        // console.log(Math.floor(Math.random() * 10) + 1);
 
-        console.log(Math.floor(Math.random() * 10) + 1);
+        // const mySym = Symbol('myKey1')
+
+        // const obj = {
+        //     [mySym]: 'myKey1'
+        // }
+
+        // console.log(typeof obj[mySym]);
+        // console.log(obj);
+
     </script>
 </body>
 

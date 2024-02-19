@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubble Sort Visualization</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .bar {
+    width: 20px;
+    margin: 0 2px;
+    background-color: dodgerblue;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<h1>Bubble Sort Visualization</h1>
+<div id="container"></div>
+<button onclick="startSorting()">Start Sorting</button>
+
+<script>
+// Function to create random array
+function createRandomArray(length, max) {
+  return Array.from({ length: length }, () => Math.floor(Math.random() * max) + 1);
+}
+
+// Function to visualize the array
+function visualizeArray(arr) {
+  const container = document.getElementById("container");
+  container.innerHTML = "";
+  arr.forEach((value) => {
+    const bar = document.createElement("div");
+    bar.classList.add("bar");
+    bar.style.height = `${value * 10}px`;
+    container.appendChild(bar);
+  });
+}
+
+// Function to perform bubble sort
+async function bubbleSort(arr) {
+  let len = arr.length;
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < len - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // Swap elements
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        swapped = true;
+        visualizeArray(arr);
+        await new Promise(resolve => setTimeout(resolve, 100)); // Delay for visualization
+      }
+    }
+  } while (swapped);
+}
+
+// Function to start sorting
+function startSorting() {
+  const arrayLength = 20;
+  const maxNum = 20;
+  const arr = createRandomArray(arrayLength, maxNum);
+  visualizeArray(arr);
+  bubbleSort(arr);
+}
+
+</script>
+</body>
+</html>
